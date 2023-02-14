@@ -1,0 +1,74 @@
+Kurulum :
+	Ýndirmiþ olduðunuz netgsm.zip dosyasýný arþivden çýkartýn. Arþivden çýkardýðýnýz dosya "netgsm" klasörü içinde bulunmalýdýr.
+	Netgsm klasörünü whmcs yazýlýmýnýzýn bulunduðu dosya yoluna ("whmcs/modules/addons/") yerleþtirin.
+	Whmcs admin panelinden kurulum sekmesinden ilave modüllere geliniz. Burada listelenen eklentilerden Netgsm Sms 
+	eklentisini etkinleþtirin. Etkinleþtirilen eklentiye gerekli izinleri verdikten sonra eklentiler sekmesinde Netgsm Sms görünecektir.
+	
+Kaldýrma :
+	Kurulum sekmesinden ilave modüllere geliniz. Netgsm Sms eklentisi listeden bulup devre dýþý býrakýnýz.
+	Devre dýþý býrakýlan eklenti veritabanýnda ilgili tablolarý silecektir. Ýsterseniz veribanýný kontrol edebilirsiniz.
+	Eklenti tablolarýn adý "netgsm_" ile baþlamaktadýr. 
+	Eklenti kurulumunu devre dýþý býraktýktan sonra eðer whmcs yazýlýmýnýz bu tablolarý silmediyse el ile kendiniz silebilirsiniz.
+	
+
+Güncelleme :
+	eklentiyi güncelleme iþleminde, güncelleme yaparken eklentiyi kaldýrmadan eklenti dosyasýný (modules/addons/netgsm) siliniz.
+	daha yeni sürüm dosyasýný sildiðiniz yere yapýþtýrýnýz.
+	admin panelinden eklenti arayüzüne giriþ yaptýðýnýz zaman otomatik olarak gerekli güncelleþtirmeleri yapacaktýr.
+
+	sürüm : 1.7
+	Not : Alan adý hatýrlatma þablonunda birden fazla kiþiye ayný mesaj metninin gitmesi sorunu düzeltildi.
+
+	sürüm 1.8
+	Not : Müþteri giriþini ve yeni müþteri kaydýný OTP sms ile doðrulama yapabilmek için þablon eklendi.
+	Login giriþinde doðrulama yapabilmek için. whmcs yazýlýmýnýzýn bulunduðu dosya yolundaki confirmation.php dosyasýný açýn
+	ve içerisine $autoauthkey deðerini oluþturun. örnek : $autoauthkey = "abcCBA123321KEcED". ÖRNEK KEY DEÐERÝNÝ KULLANMAYIN.
+	kodunuz karmaþýk ve rastgele olmalýdýr. Daha sonra bu kodu eklenti arayüzünden ayarlar sekmesinden kaydetmeniz gerekecek.
+
+	Müþterilere sms gönderilmesini engellemek için yeni bir özel müþteri alaný oluþturabilirsiniz veya mevcut alanýnýzý eklentinin
+	ayarlar sekmesinden kaydetmelisiniz. Özel müþteri alanýnýn türü Onay Kutusu olmalýdýr. 
+	
+	sürüm 1.9
+	Gönderilen mesajlar için türkçe karakter önleme özelliði eklendi. 
+	Ticket açýldýðýnda müþteriye mesaj gönderilmesi için yeni bir þablon eklendi.
+	
+	sürüm 1.9.3
+	Otp sms ile gönderilen onay kodunun müþteri telefon numarasý deðiþtiði halde eski numaraya sms gitmesi sorunu düzeltildi.
+	
+	sürüm 1.9.4
+	Artýk Otp sms ülke kodu +90 olanlara gönderilecek. 
+	Diðer ülke kodlarý ile açýlan üyelikler telefona doðrulama kodu gönderilmeden panel giriþi yapacaklar.
+	
+	sürüm 1.9.5
+	19 numaralý "Müþteri giriþinde OTP ile doðrulama" þablonu için yeni bir geliþme yapýldý. 
+	Eklentinin Ayarlar sekmesine "Müþteri Otp Sms Engelleme Alaný" adýnda yeni bir alan eklendi.
+	Bu alana oluþturduðunuz Otp engelleme Özel müþteri alanýnýzýn adýný yazmanýz gerekiyor. 
+	Özel Müþteri alanýný yönetici panelinizden Kurulum->Özel Müþteri Alanlarý sayfasýndan oluþturabilirsiniz.
+	Özel Müþteri alanýnýn türü Onay Kutusu Olmalýdýr. 
+	Bu alanýnýn müþteri panelinden deðiþtirilebilmesi için Sadece Admin kutucuðunu boþ býrakmalýsýnýz.
+	Bu alan müþteriler için iþaretli ise müþteri giriþinde o müþterinin daha önceden giriþ yaptýðý telefon numarasý ile 
+	telefon doðrulamasý yapýldýysa yeni bir doðrulama kodu mesajý gitmecektir ve panel giriþ gerçekleþecektir.
+	
+	sürüm 1.9.6
+	17 numaralý "Yeni Müþteri - OTP" sms þablonunda güncelleme yapýldý.
+	Bu þablon aktif edildiðinde, müþteriler üyelik oluþtururken telefon doðrulamasý yapmadan müþteri paneline eriþemeyecekler.
+	Sadece yeni üyeliði oluþturmuþ ve doðrulamasýný yapmamýþ olanlara mesaj gönderilir. Doðrulmasý yapýlmýþ müþterilere login olurken doðrulama kodu gönderilmez.
+	(Bknz. Þablon 19)
+	
+	Müþteri panelinde, telefon doðrulamasý olmayanlara çýkartýlan doðrulama popup ekraný kaldýrýldý. 
+	
+	sürüm 1.9.7
+	Whmcs 8.0.4 sürümü ile uyumlu hale getirildi. 
+	Müþteri giriþinde OTP ile Doðrulama (müþteri) ve Müþteri Giriþi (yönetici) þablonlarýnýn numaralarý deðiþecektir.
+	
+
+	sürüm 1.9.8
+	28 numaralý Ticket Cevabý sms þablonunda hatalý ticket numarasý gönderimi düzeltildi.
+
+	sürüm 2.1
+	Sms eklentisi Whmcs 8.1.* ile uyumlu hale getirilmiþtir. whmcs 8.0 ve eski sürümler için gerekli eklenti için https://bilgibankasi.netgsm.com.tr/hc/tr/articles/360020152531 adresine bakýnýz.
+	Sms þablonlarý sayfasýna Þablonlarý Yenileme butonu koyuldu. Kurulum veya güncelleme sýrasýnda eksik kalan sms þablonlarýný yeniler. Not: Whmcs sürümüne göre gereksiz þablonlar silinir.
+	Otomatik giriþ anahtarý tanýmlamaya artýk gerek yoktur.
+	
+	Sürüm 2.11
+	Login olan kullanýcýya aktif bir doðrulama kodu olduðu sürece yeni doðrulama kodu gönderilmesi engellendi.
