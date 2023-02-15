@@ -414,7 +414,7 @@ class SmsService
     public function XMLPOST($numbers, $message, $title = null)
     {
         
-        die;
+        
         $flag = false;
 
         include_once('sender/SMS.php');
