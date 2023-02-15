@@ -72,3 +72,7 @@ Güncelleme :
 	
 	Sürüm 2.11
 	Login olan kullanýcýya aktif bir doðrulama kodu olduðu sürece yeni doðrulama kodu gönderilmesi engellendi.
+	
+	Sürüm 2.2
+	Php 8 ve üzeri sürümlerle uyumlu hale getirildi.
+	Yönetici giriþ yaptýðýnda birden fazla yönetici numarasý girilmiþse gönderilen smslerin tek job olarak gönderilmesi saðlandý.

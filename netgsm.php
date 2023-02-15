@@ -19,7 +19,7 @@ function netgsm_config()
     $configarray = array(
         "name" => "NETGSM SMS",
         "description" => "NETGSM Toplu ve Otomatik Sms Eklentisi",
-        "version" => "2.12",
+        "version" => "2.2",
         "author" => "NETGSM",
         "language" => "turkish",
     );
