@@ -66,6 +66,7 @@ AND v.fieldid = (SELECT id FROM tblcustomfields WHERE fieldname='" . $templateRo
                 if (strpos($message, "{duedate}") !== false) {
                     $message = str_replace("{duedate}", $clientRow['duedate'], $message);
                 }
+                $message = str_replace("{duedate}", $service->prepareDate($clientRow['duedate'], $settingsRow['dateformat']), $message);
 
                 $message = str_replace("{firstname}", $clientRow['firstname'], $message);
                 $message = str_replace("{lastname}", $clientRow['lastname'], $message);
