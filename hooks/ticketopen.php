@@ -64,10 +64,15 @@ if (!function_exists('TicketOpen')) {
             $fields = $service->getFieldsWithName(__FUNCTION__);
 
             $message = str_replace("{ticketid}", $args['ticketmask'], $message);
+            $message = str_replace("{subject}", $args['subject'], $message);
+            $message = str_replace("{message}", $args['message'], $message);
+            $message = str_replace("{firstname}", $clientRow['firstname'], $message);
+            $message = str_replace("{lastname}", $clientRow['lastname'], $message);
+            
 
-            while ($field = $fields->fetch(PDO::FETCH_ASSOC)) {
+            foreach ($fields as $field) {
                 if (strpos($message, "{" . $field['field'] . "}") !== false) {
-                    $replaceto = $clientRow[$field['field']];
+                    $replaceto = isset($clientRow[$field['field']]) ? $clientRow[$field['field']] : '';
                     $message = str_replace("{" . $field['field'] . "}", $replaceto, $message);
                 }
             }

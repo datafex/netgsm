@@ -72,6 +72,9 @@ if (!function_exists('TicketClose')) {
             $message = str_replace("{ticketid}", $clientRow['tid'], $message);
         }
 
+        $message = str_replace("{firstname}", $clientRow['firstname'], $message);
+        $message = str_replace("{lastname}", $clientRow['lastname'], $message);
+
         $fields = $service->getFieldsWithName(__FUNCTION__);
 
         while ($field = $fields->fetch(PDO::FETCH_ASSOC)) {

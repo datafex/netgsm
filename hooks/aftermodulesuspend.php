@@ -57,6 +57,9 @@ if (!function_exists('AfterModuleSuspend')) {
 
                 $fields = $service->getFieldsWithName(__FUNCTION__);
 
+                $message = str_replace("{firstname}", $clientRow['firstname'], $message);
+                $message = str_replace("{lastname}", $clientRow['lastname'], $message);
+
                 if (strpos($message, "{domain}") !== false) {
                     $message = str_replace("{domain}", $args['params']['domain'], $message);
                 }

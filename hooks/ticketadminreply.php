@@ -67,16 +67,17 @@ if (!function_exists('TicketAdminReply')) {
             return null;
         }
 
-        if (strpos($message, "{
-                subject}") !== false) {
-            $message = str_replace("{
-                subject}", $args['subject'], $message);
+        if (strpos($message, "{subject}") !== false) {
+            $message = str_replace("{subject}", $args['subject'], $message);
         }
         if (strpos($message, "{
                 message}") !== false) {
             $message = str_replace("{
                 message}", $args['message'], $message);
         }
+
+        $message = str_replace("{firstname}", $clientRow['firstname'], $message);
+        $message = str_replace("{lastname}", $clientRow['lastname'], $message);
 
         $fields = $service->getFieldsWithName(__FUNCTION__);
 

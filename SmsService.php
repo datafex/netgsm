@@ -893,6 +893,9 @@ FROM tblclients as c, tblcustomfieldsvalues as v WHERE c.id='" . $clientId . "' 
         if (strpos($message, "{code}") !== false) {
             $message = str_replace("{code}", $code, $message);
         }
+
+        $message = str_replace("{firstname}", $clientRow['firstname'], $message);
+        $message = str_replace("{lastname}", $clientRow['lastname'], $message);
        
         
        

@@ -41,6 +41,7 @@ if (!function_exists('AfterRegistrarRegistrationFailed_admin')) {
         if (strpos($message, "{domain}") !== false) {
             $message = str_replace("{domain}", $args['params']['sld'].".".$args['params']['tld'], $message);
         }
+        
 
         $SMSArray = [];
         foreach ($phonenumbers as $phonenumber) {

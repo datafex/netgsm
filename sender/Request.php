@@ -25,7 +25,7 @@ class Request
     function XMLPOST()
     {
         
-        $url = "http://api.netgsm.com.tr/sms/send/xml";
+        $url = "https://api.netgsm.com.tr/sms/send/xml";
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
@@ -74,7 +74,7 @@ class Request
     public static function HTTPGET($u, $p)
     {
         $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, 'http://api.netgsm.com.tr/sms/header/get/?usercode=' . $u . '&password=' . $p);
+        curl_setopt($ch, CURLOPT_URL, 'https://api.netgsm.com.tr/sms/header/get/?usercode=' . $u . '&password=' . $p);
         curl_setopt($ch, CURLOPT_TIMEOUT, 30);
         curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
         curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);

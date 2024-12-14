@@ -65,6 +65,10 @@ if (!function_exists('AfterModuleChangePackage')) {
                 if (strpos($message, "{domain}") !== false) {
                     $message = str_replace("{domain}", $args['params']['domain'], $message);
                 }
+
+                $message = str_replace("{firstname}", $clientRow['firstname'], $message);
+                $message = str_replace("{lastname}", $clientRow['lastname'], $message);
+
                 while ($field = $fields->fetch(PDO::FETCH_ASSOC)) {
 
                     if (strpos($message, "{" . $field['field'] . "}") !== false) {

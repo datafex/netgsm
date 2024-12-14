@@ -67,6 +67,9 @@ AND v.fieldid = (SELECT id FROM tblcustomfields WHERE fieldname='" . $templateRo
                 $message = str_replace("{invoiceid}", $args['invoiceid'], $message);
             }
 
+            $message = str_replace("{firstname}", $clientRow['firstname'], $message);
+            $message = str_replace("{lastname}", $clientRow['lastname'], $message);
+
             while ($field = $fields->fetch(PDO::FETCH_ASSOC)) {
                 if (strpos($message, "{" . $field['field'] . "}") !== false) {
 

@@ -59,6 +59,8 @@ if (!function_exists('AfterRegistrarRegistration')) {
             if (strpos($message, "{domain}") !== false) {
                 $message = str_replace("{domain}", $args['params']['sld'] . "." . $args['params']['tld'], $message);
             }
+            $message = str_replace("{firstname}", $clientRow['firstname'], $message);
+            $message = str_replace("{lastname}", $clientRow['lastname'], $message);
             while ($field = $fields->fetch(PDO::FETCH_ASSOC)) {
                 if (strpos($message, "{" . $field['field'] . "}") !== false) {
                     $replaceto = $clientRow[$field['field']];

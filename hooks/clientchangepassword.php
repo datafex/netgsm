@@ -52,6 +52,9 @@ if (!function_exists('ClientChangePassword')) {
 
         $message = $templateRow['template'];
 
+        $message = str_replace("{firstname}", $clientRow['firstname'], $message);
+        $message = str_replace("{lastname}", $clientRow['lastname'], $message);
+
         if (strpos($message, "{password}") !== false) {
             $replaceto = $args['password'];
             $message = str_replace("{password}", $replaceto, $message);

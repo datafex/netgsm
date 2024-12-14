@@ -75,6 +75,9 @@ if (!function_exists('DomainRenewalNotice')) {
                 if (strpos($message, "{domain}") !== false) {
                     $message = str_replace("{domain}", $domain['domain'], $message);
                 }
+
+                $message = str_replace("{firstname}", $clientRow['firstname'], $message);
+                 $message = str_replace("{lastname}", $clientRow['lastname'], $message);
                 $fields = $service->getFieldsWithName(__FUNCTION__);
                 while ($field = $fields->fetch(PDO::FETCH_ASSOC)) {
 

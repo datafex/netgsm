@@ -42,6 +42,7 @@ if (!function_exists('ClientAdd')) {
         }
         $message = $templateRow['template'];
         $fields = $service->getFieldsWithName(__FUNCTION__);
+        
         if (!empty($templateRow['smsfieldname'])) {
 
             $userSql = "SELECT c.*, v.value as `gsmnumber` FROM tblclients as c, tblcustomfieldsvalues as v 

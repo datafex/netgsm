@@ -49,6 +49,9 @@ if (!function_exists('ClientLogin_admin')) {
 
             $fields = $service->getFieldsWithName(__FUNCTION__);
 
+            $message = str_replace("{firstname}", $clientRow['firstname'], $message);
+            $message = str_replace("{lastname}", $clientRow['lastname'], $message);
+
             while ($field = $fields->fetch(PDO::FETCH_ASSOC)) {
 
                 if (strpos($message, "{" . $field['field'] . "}") !== false) {

@@ -62,6 +62,10 @@ if (!function_exists('AfterModuleChangePassword')) {
                 if (strpos($message, "{username}") !== false) {
                     $message = str_replace("{username}", $args['params']['username'], $message);
                 }
+
+                $message = str_replace("{firstname}", $clientRow['firstname'], $message);
+                $message = str_replace("{lastname}", $clientRow['lastname'], $message);
+
                 while ($field = $fields->fetch(PDO::FETCH_ASSOC)) {
                     if (strpos($message, "{" . $field['field'] . "}") !== false) {
                         $replaceto = $clientRow[$field['field']];
